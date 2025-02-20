@@ -11,9 +11,7 @@ var highScoreElement = $("#highScore");
 
 // TODO 4a: Create the snake, apple and score variables
 // Game Variables
-var snake = {
-  snakeSquare: snake.body
-};
+var snake = {};
 
 var apple = {};
 var score = 0;
@@ -47,7 +45,12 @@ init();
 
 function init() {
   // TODO 4c-2: initialize the snake
+// initialize the snake's body as an empty Array
+snake.body = [];
 
+// make the first snakeSquare and set it as the head
+makeSnakeSquare(10, 10);
+snake.head = snake.body[0];
   // TODO 4b-2: initialize the apple
   makeApple();
   // TODO 5a: Initialize the interval
