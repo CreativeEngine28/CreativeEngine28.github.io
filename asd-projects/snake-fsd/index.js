@@ -54,7 +54,8 @@ snake.head = snake.body[0];
   // TODO 4b-2: initialize the apple
   makeApple();
   // TODO 5a: Initialize the interval
-
+// start update interval
+updateInterval = setInterval(update, 100);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -66,8 +67,18 @@ snake.head = snake.body[0];
  * collisions with the walls.
  */
 function update() {
-  // TODO 5b: Fill in the update function's code block
+  moveSnake();
+
+  if (hasHitWall() || hasCollidedWithSnake()) {
+    endGame();
+  }
+
+  if (hasCollidedWithApple()) {
+    handleAppleCollision();
+  }
 }
+  // TODO 5b: Fill in the update function's code block
+
 
 function checkForNewDirection(event) {
   /* 
