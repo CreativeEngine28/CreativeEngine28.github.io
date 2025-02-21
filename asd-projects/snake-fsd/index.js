@@ -94,7 +94,7 @@ function checkForNewDirection(event) {
 
   // FILL IN THE REST
 
-  console.log(snake.head.direction);     // uncomment me!
+  // console.log(snake.head.direction);     // uncomment me!
 }
 
 function moveSnake() {
@@ -117,6 +117,10 @@ function moveSnake() {
   HINT: The snake's head will need to move forward 1 square based on the value
   of snake.head.direction which may be one of "left", "right", "up", or "down"
   */
+  if (snake.head.direction === "left") {
+    snake.head.column = snake.head.column - 1;
+  }
+  repositionSquare(snake.head);
 }
 
 function hasHitWall() {
