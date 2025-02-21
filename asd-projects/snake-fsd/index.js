@@ -94,7 +94,7 @@ function checkForNewDirection(event) {
 
   // FILL IN THE REST
 
-  // console.log(snake.head.direction);     // uncomment me!
+  console.log(snake.head.direction);     // uncomment me!
 }
 
 function moveSnake() {
@@ -267,7 +267,8 @@ function makeSnakeSquare(row, column) {
 */
 function handleKeyDown(event) {
   // TODO 6a: make the handleKeyDown function register which key is pressed
-  
+  activeKey = event.which;
+console.log(activeKey);
 }
 
 /* Given a gameSquare (which may be a snakeSquare or the apple), position
