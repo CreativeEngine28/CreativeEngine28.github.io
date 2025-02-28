@@ -130,6 +130,12 @@ function moveSnake() {
   */
   if (snake.head.direction === "left") {
     snake.head.column = snake.head.column - 1;
+  } else if (snake.head.direction === "right") {
+    snake.head.column = snake.head.column + 1;
+  } else if (snake.head.direction === "up") {
+    snake.head.row = snake.head.row + 1;
+  } else if (snake.head.direction === "down"){
+    sheak.head.row = sneak.head.row - 1;
   }
   repositionSquare(snake.head);
 }
@@ -282,6 +288,7 @@ function makeSnakeSquare(row, column) {
 */
 function handleKeyDown(event) {
   // TODO 6a: make the handleKeyDown function register which key is pressed
+  $("body").on("keydown", handleKeyDown);
   activeKey = event.which;
 console.log(activeKey);
 }
