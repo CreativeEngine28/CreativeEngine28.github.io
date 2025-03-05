@@ -81,16 +81,7 @@ function update() {
 
 
 function checkForNewDirection(event) {
-  function update() {
-  moveSnake();
-
-  if (hasHitWall() || hasCollidedWithSnake()) {
-    endGame();
-  }
-
-  if (hasCollidedWithApple()) {
-    handleAppleCollision();
-  }
+  function update(){}
 }
   /* 
   TODO 6b: Update snake.head.direction based on the value of activeKey.
