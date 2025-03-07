@@ -10,7 +10,12 @@ function runProgram(){
   // Constant Variables
   var FRAME_RATE = 60;
   var FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
-  
+  var KEY = {
+    LEFT: 37,
+    RIGHT: 39,
+    UP: 38,
+    DOWN: 40,
+  }
   // Game Item Objects
 
 
@@ -35,6 +40,9 @@ function runProgram(){
   Called in response to events.
   */
   function handleKeyDown(event) {
+    if (event.which === KEY.Left){
+      console.log("Left pressed")
+    }
 console.log(???)
   }
 
