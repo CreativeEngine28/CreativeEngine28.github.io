@@ -40,10 +40,16 @@ function runProgram(){
   Called in response to events.
   */
   function handleKeyDown(event) {
-    if (event.which === KEY.Left){
-      console.log("Left pressed")
+    if (event.which === KEY.LEFT){
+      console.log("Left pressed");
     }
-console.log(???)
+    else if (event.which === KEY.RIGHT){
+      return console.log("Right pressed")
+    } else if (event.which === KEY.UP){
+      return console.log("Up pressed");
+    } else if (event.which === KEY.DOWN){
+      return console.log("Down pressed")
+    }
   }
 
   ////////////////////////////////////////////////////////////////////////////////
