@@ -11,6 +11,7 @@ function runProgram(){
   var FRAME_RATE = 60;
   var FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
   var KEY = {
+    SPACE: 32,
     LEFT: 37,
     RIGHT: 39,
     UP: 38,
