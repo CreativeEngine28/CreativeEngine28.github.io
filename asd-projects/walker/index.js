@@ -39,7 +39,8 @@ var walker = {
   by calling this function and executing the code inside.
   */
   function newFrame() {
-    
+    repositionWalker();
+    redrawWalker();
 
   }
   
@@ -62,8 +63,17 @@ var walker = {
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
+function repositionWalker(){
+positionX += speedX;
+positionY += speedY;
+}
+  function redrawWalker(){
+$("#walker").css("left", positionX)
+$("#walker").css("right", positionX)
+$("#walker").css("up", positionY)
+$("#walker").css("down", positionY)
+  }
 
-  
   function endGame() {
     // stop the interval timer
     clearInterval(interval);
