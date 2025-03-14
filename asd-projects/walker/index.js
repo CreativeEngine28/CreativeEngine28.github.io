@@ -49,14 +49,18 @@ var walker = {
   */
   function handleKeyDown(event) {
     if (event.which === KEY.LEFT){
-      console.log("Left pressed");
+      walker.speedX = -5;
+      //console.log("Left pressed");
     }
     else if (event.which === KEY.RIGHT){
-      return console.log("Right pressed")
+      walker.speedX = 5;
+      //return console.log("Right pressed")
     } else if (event.which === KEY.UP){
-      return console.log("Up pressed");
+      walker.speedY = 5;
+      //return console.log("Up pressed");
     } else if (event.which === KEY.DOWN){
-      return console.log("Down pressed")
+      walker.speedY = -5;
+      //return console.log("Down pressed")
     }
   }
 
