@@ -72,10 +72,10 @@ positionX += speedX;
 positionY += speedY;
 }
   function redrawWalker(){
-$("#walker").css("left", positionX)
-$("#walker").css("right", positionX)
-$("#walker").css("up", positionY)
-$("#walker").css("down", positionY)
+$("#walker").css("LEFT", positionX);
+$("#walker").css("RIGHT", positionX);
+$("#walker").css("UP", positionY);
+$("#walker").css("DOWN", positionY);
   }
 
   function endGame() {
