@@ -97,7 +97,7 @@ function checkForNewDirection(event) {
   // FILL IN THE REST
 
   // console.log(snake.head.direction);     // uncomment me!
-}
+
 
 function moveSnake() {
   /* 
@@ -126,7 +126,7 @@ function moveSnake() {
   } else if (snake.head.direction === "up") {
     snake.head.row = snake.head.row + 1;
   } else if (snake.head.direction === "down"){
-    sheak.head.row = sneak.head.row - 1;
+    snake.head.row = snake.head.row - 1;
   }
   repositionSquare(snake.head);
 }
