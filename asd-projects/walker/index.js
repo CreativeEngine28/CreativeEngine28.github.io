@@ -19,8 +19,8 @@ function runProgram(){
   }
   // Game Item Objects
 var walker = {
-  x: 0,
-  y: 0,
+  positionX: 0,
+  positionY: 0,
   speedX: 0,
   speedY: 0,
 
@@ -29,7 +29,7 @@ var walker = {
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
   $(document).on('keydown', handleKeyDown);                           // change 'eventType' to the type of event you want to handle
-
+ $(document).on('keyup', handleKeyUp);
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
@@ -39,8 +39,8 @@ var walker = {
   by calling this function and executing the code inside.
   */
   function newFrame() {
-    repositionWalker();
-    redrawWalker();
+    repositionGameItem();
+    redrawGameItem();
 
   }
   
@@ -48,34 +48,42 @@ var walker = {
   Called in response to events.
   */
   function handleKeyDown(event) {
+    console.log(event.which);
     if (event.which === KEY.LEFT){
       walker.speedX = -5;
       //console.log("Left pressed");
-    }
-    else if (event.which === KEY.RIGHT){
+    }if (event.which === KEY.RIGHT){
       walker.speedX = 5;
       //return console.log("Right pressed")
-    } else if (event.which === KEY.UP){
-      walker.speedY = 5;
-      //return console.log("Up pressed");
-    } else if (event.which === KEY.DOWN){
+    } if (event.which === KEY.UP){
       walker.speedY = -5;
+      //return console.log("Up pressed");
+    } if (event.which === KEY.DOWN){
+      walker.speedY = 5;
       //return console.log("Down pressed")
     }
+  }
+  function handleKeyUp(event){
+    console.log(event.which);
+ if (event.which !== KEY.LEFT){
+  walker.speedX = 0;
+ } if (event.which !== KEY.RIGHT){
+  walker.speedX = 0
+ }
   }
 
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
-function repositionWalker(){
-positionX += speedX;
-positionY += speedY;
+function repositionGameItem(){
+walker.positionX += walker.speedX;
+walker.positionY += walker.speedY;
 }
-  function redrawWalker(){
-$("#walker").css("LEFT", positionX);
-$("#walker").css("RIGHT", positionX);
-$("#walker").css("UP", positionY);
-$("#walker").css("DOWN", positionY);
+  function redrawGameItem(){
+$("#walker").css("left", walker.positionX);
+$("#walker").css("right", walker.positionX);
+$("#walker").css("top", walker.positionY);
+$("#walker").css("bottom", walker.positionY);
   }
 
   function endGame() {
