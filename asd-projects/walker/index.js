@@ -68,7 +68,11 @@ var walker = {
  if (event.which !== KEY.LEFT){
   walker.speedX = 0;
  } if (event.which !== KEY.RIGHT){
-  walker.speedX = 0
+  walker.speedX = 0;
+ } if (event.which !== KEY.UP){
+  walker.speedY = 0;
+ } if (event.which !== KEY.DOWN){
+  walker.speedY = 0;
  }
   }
 
