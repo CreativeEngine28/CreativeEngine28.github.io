@@ -89,6 +89,17 @@ $("#walker").css("right", walker.positionX);
 $("#walker").css("top", walker.positionY);
 $("#walker").css("bottom", walker.positionY);
   }
+ 
+  function wallCollision(){
+  if ($("#board").width() < walker.positionX){
+    walker.positionX -= walker.speedX;
+  } if (walker.positionY < 0 || walker.positionY > $("#board").height()){
+    walker.positionY -= walker.speedY;
+  } if ( 0  walker.positionX){
+    return newFrame();
+  }
+
+};
 
   function endGame() {
     // stop the interval timer
