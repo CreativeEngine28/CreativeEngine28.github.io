@@ -40,6 +40,7 @@ var walker = {
   */
   function newFrame() {
     repositionGameItem();
+    wallCollision();
     redrawGameItem();
 
   }
@@ -91,14 +92,13 @@ $("#walker").css("bottom", walker.positionY);
   }
  
   function wallCollision(){
-  if ($("#board").width() < walker.positionX){
+  if ($("#board").width() - 45 < walker.positionX){
     walker.positionX -= walker.speedX;
-  } if (walker.positionY < 0 || walker.positionY > $("#board").height()){
+  } if (walker.positionY < 0 || walker.positionY > $("#board").height() - 45){
     walker.positionY -= walker.speedY;
-  } if ( 0  walker.positionX){
-    return newFrame();
+  } if ( 0 > walker.positionX){
+    walker.positionX -= walker.speedX;
   }
-
 };
 
   function endGame() {
