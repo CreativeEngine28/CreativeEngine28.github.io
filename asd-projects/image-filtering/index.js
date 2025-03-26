@@ -20,7 +20,7 @@ function resetAndRender() {
 // all of your apply functions
 function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
-applyFilter
+applyFilter(reddify);
   
 
   // do not change the below line of code
@@ -32,26 +32,29 @@ applyFilter
 /////////////////////////////////////////////////////////
 
 // TODO 1, 2 & 4: Create the applyFilter function here
-function applyFilter(){
+function applyFilter(filterFuntion){
   for (let r = 0; r < image.length; r++){
 const row = image[r];
 for (let c = 0; c < row.length; c++);{
 
   var rgbString = row[c]; 
 
-  let color = $square.css("background-color");
-  const rgbArray = rgbStringToArray(color);
+  //let color = $square.css("background-color");
+  const rgbNumbers = rgbStringToArray(rgbString);
 
-  rgbArray[0] = 255 - rgbArray[0];
-  rgbArray[1] = rgbArray[2];
-  rgbArray[2] += 50;
+ filterFunction(rgbNumbers); 
+  rgbNumbers[RED] = 255 - rgbNumbers[0];
+  rgbNumbers[GREEN] = rgbNumbers[2];
+  rgbNumbers[BLUE] += 50;
+ 
+  rgbString = rgbArrayToString(rgbNumbers);
 
-  color = rgbArrayToString(rgbArray);
-
-  $square.css("background-color", color);
-}
-  }
-}
+  image[r][c] = rgbString;
+ 
+  //$square.css("background-color", color);
+};
+  };
+};
 
 // TODO 7: Create the applyFilterNoBackground function
 
@@ -60,10 +63,9 @@ for (let c = 0; c < row.length; c++);{
 
 
 // TODO 3: Create reddify function
-function reddify(x){
-  
-return
-}
+function reddify(l){
+  l[RED] = 200;
+};
 
 // TODO 6: Create more filter functions
 
