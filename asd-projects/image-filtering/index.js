@@ -60,7 +60,10 @@ for (let c = 0; c < row.length; c++);{
 
 
 // TODO 5: Create the keepInBounds function
-
+function keepInBounds(g){
+  constg = Math.random();
+  const result = (g < 0 ? 0 : g > 255 ? 255 : g);
+}
 
 // TODO 3: Create reddify function
 function reddify(l){
@@ -68,6 +71,8 @@ function reddify(l){
 };
 
 // TODO 6: Create more filter functions
-
+function decreaseBlue(y){
+var u = BLUE - 50;
+}
 
 // CHALLENGE code goes below here
