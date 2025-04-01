@@ -57,12 +57,36 @@ for (let c = 0; c < row.length; c++);{
 };
 
 // TODO 7: Create the applyFilterNoBackground function
-
+function applyFliterNoBackground(){
+  var c = 150
+  for (let r = 0; r < image.length; r++){
+    const row = image[r];
+    for (let c = 0; c < row.length; c++);{
+    
+      var rgbString = row[c]; 
+    
+      //let color = $square.css("background-color");
+      const rgbNumbers = rgbStringToArray(rgbString);
+    
+     filterFunction(rgbNumbers); 
+      rgbNumbers[RED] = 255 - rgbNumbers[0];
+      rgbNumbers[GREEN] = rgbNumbers[2];
+      rgbNumbers[BLUE] += 50;
+     
+      rgbString = rgbArrayToString(rgbNumbers);
+    
+      image[r][c] = rgbString;
+     
+      //$square.css("background-color", color);
+    };
+      };
+}
 
 // TODO 5: Create the keepInBounds function
 function keepInBounds(g){
-  constg = Math.random();
+  const g = Math.random();
   const result = (g < 0 ? 0 : g > 255 ? 255 : g);
+  
 }
 
 // TODO 3: Create reddify function
@@ -71,8 +95,13 @@ function reddify(l){
 };
 
 // TODO 6: Create more filter functions
-function decreaseBlue(y){
+function decreaseBlue(u){
 var u = BLUE - 50;
-}
+};
+u = keepInBounds(u - 50);
 
+function increaseGreenByBlue(v){
+var v = GREEN + BLUE;
+}
+v = keepInBounds(u + v);
 // CHALLENGE code goes below here
