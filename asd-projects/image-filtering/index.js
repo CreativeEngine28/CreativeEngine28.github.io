@@ -58,9 +58,12 @@ for (let c = 0; c < row.length; c++);{
 
 // TODO 7: Create the applyFilterNoBackground function
 function applyFliterNoBackground(){
-  var c = 150
+  var h = image[0];
   for (let r = 0; r < image.length; r++){
     const row = image[r];
+    if ( h === image[0]){
+      
+    }
     for (let c = 0; c < row.length; c++);{
     
       var rgbString = row[c]; 
