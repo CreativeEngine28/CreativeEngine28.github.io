@@ -58,29 +58,35 @@ for (let c = 0; c < row.length; c++);{
 
 // TODO 7: Create the applyFilterNoBackground function
 function applyFliterNoBackground(){
-  var h = image[0];
+  var h = image[0][0];
   for (let r = 0; r < image.length; r++){
-    const row = image[r];
-    if ( h === image[0]){
+    var row = image[r];
+    /*if ( h === image[0]){
       
-    }
+    }*/
     for (let c = 0; c < row.length; c++);{
     
       var rgbString = row[c]; 
+    if (rgbString !== h){
+      var rgbNumbers = rgbStringToArray(rgbString);
+
     
       //let color = $square.css("background-color");
-      const rgbNumbers = rgbStringToArray(rgbString);
+      
     
      filterFunction(rgbNumbers); 
-      rgbNumbers[RED] = 255 - rgbNumbers[0];
+     rgbString = rgbArrayToString(rgbNumbers);
+     row[c] = rgbString;
+    }
+      /*rgbNumbers[RED] = 255 - rgbNumbers[0];
       rgbNumbers[GREEN] = rgbNumbers[2];
       rgbNumbers[BLUE] += 50;
      
-      rgbString = rgbArrayToString(rgbNumbers);
+      
     
       image[r][c] = rgbString;
      
-      //$square.css("background-color", color);
+      //$square.css("background-color", color);*/
     };
       };
 }
